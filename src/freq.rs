@@ -15,7 +15,7 @@ fn word_freq<F>(s: String, sf: F) -> HashMap<String, u32>
 
         s.split(sf)
             .filter( |s| !s.is_empty() )
-            .map(|s| { s.to_lowercase() })
+            .map(|s| { s.to_string() })
             .fold(HashMap::new(), |mut m, i| {
                 *m.entry(i).or_insert(0u32) += 1;
                 m
